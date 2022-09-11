@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Badge from 'react-bootstrap/Badge';
 //import "../style/Footer.css"
 
+
 class Header extends React.Component{
     render(){
         return(
