@@ -1,7 +1,7 @@
 import React from "react";
 import Slider from "./Slider";
 import Card from "./Cards";
-
+import axios from "axios";
 class Main extends React.Component{
     constructor(props){
         super(props);
@@ -9,12 +9,32 @@ class Main extends React.Component{
             newsArray:[]
         }
     }
+    componentDidMount=()=>{
+        axios
+        .get(`http://localhost:3001/news`)
+        .then(result=>{
+            this.setState({
+                newsArray:result.data
+            })
+
+
+        })
+        
+        .catch(err=>{
+            console.log(err);
+        })
+
+    }
+
+
     
   render(){
       return(
           <>
-          <Slider/>
-          <Card/>
+         {/* { console.log(this.state.newsArray)} */}
+          
+          <Slider newsArray={this.state.newsArray}/>
+          <Card  newsArray={this.state.newsArray}/>
 
           </>
       )
