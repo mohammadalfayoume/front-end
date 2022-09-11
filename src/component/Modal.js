@@ -4,7 +4,7 @@ import Modal from 'react-bootstrap/Modal';
 import Row from 'react-bootstrap/Row';
 import {Col} from "react-bootstrap";
 
-import "../style/Footer.css"
+
 class CarModal extends React.Component{
   constructor(props) {
     super(props);
