@@ -1,0 +1,25 @@
+.slideContent {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #000000bf;
+}
+.dateAndSource {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.d-block{
+    height: 600px;
+}
+
+.slideContent a{
+    text-decoration: none;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    color: #ccc;
+    background-color: rgb(3 39 118 / 80%)
+}
