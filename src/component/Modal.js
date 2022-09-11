@@ -4,7 +4,7 @@ class Modal extends React.Component{
   render(){
       return(
           <>
-          Modal
+          
           </>
       )
   }
