@@ -1,7 +1,9 @@
 import React from "react";
 import Slider from "./Slider";
-import Card from "./Cards";
+import NewsCard from "./Cards";
 import axios from "axios";
+
+
 class Main extends React.Component{
     constructor(props){
         super(props);
@@ -34,7 +36,9 @@ class Main extends React.Component{
          {/* { console.log(this.state.newsArray)} */}
           
           <Slider newsArray={this.state.newsArray}/>
-          <Card  newsArray={this.state.newsArray}/>
+          
+          <NewsCard  newsArray={this.state.newsArray}/>
+          
 
           </>
       )
