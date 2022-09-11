@@ -1,39 +1,33 @@
 import React from "react";
 import Carousel from "react-bootstrap/Carousel";
+import '../style/slider.css'
 
 class Slider extends React.Component {
   render() {
-    // let newArr = [];
-    // for (let i = 0; i < 10; i++) {
-    //   newArr.push(this.props.newsArray[i]);
-    // }
-    // console.log(newArr);
     return (
-      <Carousel fade>
+      <Carousel fade className="slider">
         {this.props.newsArray.slice(0,11).map((item) => {
           return (
       <Carousel.Item>
+        <div className="image">
         <img
           className="d-block w-100"
-          src="https://sbooks.net/wp-content/uploads/2021/10/old-book-flying-letters-magic-light-background-bookshelf-library-ancient-books-as-symbol-knowledge-history-218640948.jpg"
+          src="https://media.istockphoto.com/photos/breaking-news-world-news-with-map-backgorund-picture-id1182477852?k=20&m=1182477852&s=612x612&w=0&h=I3wdSzT_5h1y9dHq_YpZ9AqdIKg8epthr8Guva8FkPA="
           alt="First slide"
         />
-        <Carousel.Caption>
+        </div>
+        <Carousel.Caption className="slideContent">
+          <div className="dateAndSource">
+          <span>Date: <b>{item.date}</b></span>
+          <span>Source: <b>{item.source}</b></span>
+          </div>
           <h3>{item.headline}</h3>
           <p>{item.description}</p>
+          <p>{item.content}</p>
+          <h5><a href={item.url} target='_blank' rel="noreferrer">See more...</a></h5>
+
         </Carousel.Caption>
       </Carousel.Item>
-      
-            // <Carousel.Item>
-            //   <img
-            //     className="d-block w-100"
-            //     src="https://sbooks.net/wp-content/uploads/2021/10/old-book-flying-letters-magic-light-background-bookshelf-library-ancient-books-as-symbol-knowledge-history-218640948.jpg"
-            //     alt="First slide"
-            //   />
-            //   <Carousel.Caption>
-            //     <p>{item.content}</p>
-            //   </Carousel.Caption>
-            // </Carousel.Item>
           );
         })}
       </Carousel>
