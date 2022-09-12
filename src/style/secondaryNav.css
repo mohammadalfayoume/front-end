@@ -1,0 +1,16 @@
+.secondary-nav-link:link,
+.secondary-nav-link:visited {
+  text-decoration: none;
+  color: #ccc;
+  font-size: 1.2rem;
+  font-weight: 400;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.secondary-nav-link:link:hover,
+.secondary-nav-link:link:active {
+  color: #fff;
+}

@@ -11,9 +11,9 @@
     gap: 50px;
 }
 
-.d-block{
+/* .d-block{
     height: 600px;
-}
+} */
 
 .slideContent a{
     text-decoration: none;
@@ -22,4 +22,10 @@
     border-radius: 10px;
     color: #ccc;
     background-color: rgb(3 39 118 / 80%)
+}
+
+.slider {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 10px;
 }
