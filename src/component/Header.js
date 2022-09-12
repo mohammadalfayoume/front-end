@@ -1,9 +1,11 @@
 import React from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
+import {Navbar,NavItem} from "react-bootstrap";
 import  "../style/Header.css";
 import logo from '../assets/logo3.png';
+import LoginButton from "./LoginButton";
+import LogoutButton from "./LogoutButton";
 
 
 function Header() {
@@ -46,18 +48,20 @@ function Header() {
               </Nav.Link>
 
 
-              <Nav.Link className="fs-5 text-uppercase px-3 fw-bold" href="/">
-               Login
+              <Nav.Link >
+              <LoginButton/>
               </Nav.Link>
 
-              <Nav.Link
-                className="fs-5 text-uppercase px-3 fw-bold" href="/">
-                Logout
+              <Nav.Link>
+               <LogoutButton/>
               </Nav.Link>
+             
+              
           
             </Nav>
           </Navbar.Collapse>
         </Container>
+        
       </Navbar>
     </div>
   );
