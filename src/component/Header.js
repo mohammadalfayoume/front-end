@@ -6,12 +6,15 @@ import  "../style/Header.css";
 import logo from '../assets/logo3.png';
 import LoginButton from "./LoginButton";
 import LogoutButton from "./LogoutButton";
+import Button from 'react-bootstrap/Button';
+import { withAuth0 } from '@auth0/auth0-react';
 
 
-function Header() {
 
-
-  return (
+class Header extends React.Component {
+  render(){
+    const { isAuthenticated } = this.props.auth0;
+return (
     <div>
       <Navbar bg="dark" expand="lg" >
         <Container>
@@ -23,7 +26,7 @@ function Header() {
             <img className="logo-img" src={logo} alt="logo"/>
             NEWS LIVE
           </Navbar.Brand>
-          
+
           <Navbar.Collapse
             id="basic-navbar-nav"
             className="ml-auto justify-content-end"
@@ -33,10 +36,10 @@ function Header() {
                 Home
               </Nav.Link>
 
-              <Nav.Link
+          {isAuthenticated && <Nav.Link
                 className="fs-5 text-uppercase px-3 fw-bold" href="/profile">
                 Profile
-              </Nav.Link>
+              </Nav.Link> } 
               <Nav.Link
                 className="fs-5 text-uppercase px-3 fw-bold" href="/about" >
                 About Us
@@ -47,23 +50,21 @@ function Header() {
                 Contact Us
               </Nav.Link>
 
+              <Button variant="dark"> <LoginButton/></Button>
 
-              <Nav.Link >
-              <LoginButton/>
-              </Nav.Link>
+              <Button variant="dark"> <LogoutButton/></Button>
 
-              <Nav.Link>
-               <LogoutButton/>
-              </Nav.Link>
-             
-              
-          
+
+
+
             </Nav>
           </Navbar.Collapse>
         </Container>
-        
+
       </Navbar>
     </div>
   );
 }
-export default Header;
+}
+export default withAuth0(Header);
+

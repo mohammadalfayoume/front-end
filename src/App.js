@@ -7,11 +7,14 @@ import Contact from "./component/Contact";
 import Profile from "./component/Profile";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { withAuth0 } from '@auth0/auth0-react';
 
 
 
 class App extends React.Component{
   render(){
+
+    const { isAuthenticated } = this.props.auth0;
       return(
           <>
           <Router>
@@ -23,7 +26,7 @@ class App extends React.Component{
               <Route exact path="/" element={<Main />}></Route>
               <Route exact path="/about" element={<About />}></Route>
               <Route exact path="/contact" element={<Contact />}></Route>
-              <Route exact path="/profile" element={<Profile />}></Route>
+              {isAuthenticated  &&  (<Route exact path="/profile" element={<Profile />}></Route> )}
             
     
 
@@ -39,4 +42,4 @@ class App extends React.Component{
   }
 }
 
-export default App
+export default withAuth0(App)
