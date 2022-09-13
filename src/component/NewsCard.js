@@ -8,13 +8,16 @@ class NewsCard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showModal: false
+      showModal: false,
+      dataOfNews : {}
     }
   }
 
-  showModalFunction = () => {
+  showModalFunction = (headline) => {
+     const dataOfNewsOfModal=this.props.newsArray.find(news=>news.headline===headline)
     this.setState({
-      showModal: true
+      showModal: true,
+      dataOfNews :dataOfNewsOfModal
     })
     
   }
@@ -45,7 +48,7 @@ class NewsCard extends React.Component {
 
 
                     </Card.Text>
-                    <Button variant="primary" onClick={this.showModalFunction}> Show </Button>
+                    <Button variant="primary" onClick={()=>this.showModalFunction(item.headline)}> Show </Button>
                   </Card.Body>
                 </Card></Col>
               )
@@ -55,7 +58,7 @@ class NewsCard extends React.Component {
           </Row>
         </div>
 
-        <NewsModal showModal={this.state.showModal} closeModalFunction={this.closeModalFunction} newsArray={this.props.newsArray} />
+        <NewsModal showModal={this.state.showModal} closeModalFunction={this.closeModalFunction} dataOfNews={this.state.dataOfNews} />
       </>
     )
   }
