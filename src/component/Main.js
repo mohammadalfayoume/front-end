@@ -5,6 +5,8 @@ import NavBar from "./NavBar";
 import CommunitySideBar from "./CommunitySideBar";
 import '../style/sideBar.css'
 import axios from "axios";
+import { withAuth0 } from '@auth0/auth0-react';
+
 
 let URL=process.env.REACT_APP_URL
 
@@ -91,6 +93,7 @@ class Main extends React.Component{
   };
 
   render(){
+    const { isAuthenticated } = this.props.auth0;
       return(
           <>
          {/* { console.log(this.state.newsArray)} */}
@@ -101,15 +104,11 @@ class Main extends React.Component{
           
           <div className="wrapper">
           <NewsCard  newsArray={this.state.newsArray}/>
-          <div className="content"><CommunitySideBar addPost={this.addPost}/></div>
+          <div className="content"> {isAuthenticated &&<CommunitySideBar addPost={this.addPost}/>}</div>
           </div>
-         
-          
-          
-
           </>
       )
   }
 }
 
-export default Main 
+export default withAuth0(Main) 

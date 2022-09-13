@@ -8,6 +8,8 @@ import {
 } from "cdbreact";
 
 import "../style/sideBar.css";
+import { withAuth0 } from '@auth0/auth0-react'; 
+
 
 class CommunitySideBar extends Component {
   render() {
@@ -51,11 +53,9 @@ class CommunitySideBar extends Component {
            
           </CDBSidebar>
         </div>
-
-       
       </div>
     );
   }
 }
 
-export default CommunitySideBar;
+export default withAuth0(CommunitySideBar)

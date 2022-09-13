@@ -1,0 +1,50 @@
+[
+
+
+    {
+        "_id": 1,
+        "image_url": "https://avatars.githubusercontent.com/u/109733595?v=4",
+        "title": "Mahmoud Qunbor",
+        "description": "I'm a Student at LTUC studying software engineering in Jordan."
+        
+      },
+    {
+      "_id": 6,
+      "image_url": "https://avatars.githubusercontent.com/u/109734632?v=4",
+      "title": "Mohannad Jaser",
+      "description": "studied Computer Information System"
+      
+      
+    },
+    {
+      "_id": 2,
+      "image_url": "https://avatars.githubusercontent.com/u/109732786?v=4",
+      "title": "Lujain Aljarrah",
+      "description": "Pharm.D, Programmer, restrict to healthy lifestyle"
+     
+    },
+    {
+      "_id": 3,
+      "image_url": "https://avatars.githubusercontent.com/u/109729591?v=4",
+      "title": "Mohammad Alfayoume",
+      "description": "Full Stack | Python - Web Developer in progress"
+     
+    },
+    {
+      "_id": 4,
+      "image_url": "https://avatars.githubusercontent.com/u/109731820?s=400&u=d11bdcb9ea9ddab5d757408b0e5c570505975444&v=4",
+      "title": "abeer alshboul",
+      "description": "Computer science-Web Developer"
+     
+    },
+    {
+      "_id": 5,
+      "image_url": "https://avatars.githubusercontent.com/u/109732898?v=4",
+      "title": "Dina alshboul",
+      "description": "Computer engineering *Trained in orange as an android developer "
+      
+    }
+   
+  ]
+  
+  
