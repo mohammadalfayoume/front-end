@@ -1,14 +1,61 @@
-import React, { Component } from 'react'
-import SideBarCommunityModal from './SideBarCommunityModal'
+import React, { Component } from "react";
+import SideBarCommunityModal from "./SideBarCommunityModal";
+import {
+  CDBSidebar,
+  CDBSidebarContent,
+  CDBSidebarHeader,
+  CDBSidebarMenu,
+} from "cdbreact";
+
+import "../style/sideBar.css";
 
 class CommunitySideBar extends Component {
   render() {
     return (
       <div>
-        <SideBarCommunityModal />
+        <div
+          style={{
+            display: "flex",
+            height: "100vh",
+            overflow: "scroll initial",
+          }}
+          className="sidebar"
+        >
+          <CDBSidebar textColor="#fff" backgroundColor="#333">
+            <CDBSidebarHeader prefix={<i className="fa fa-bars fa-large"></i>}>
+              <a
+                href="/"
+                className="text-decoration-none"
+                style={{ color: "inherit" }}
+              >
+                Community
+              </a>
+            </CDBSidebarHeader>
+
+            <CDBSidebarContent className="sidebar-content">
+              <CDBSidebarMenu>
+                {/* <NavLink exact to="/" activeClassName="activeClicked">
+                  <CDBSidebarMenuItem icon="columns">
+                  
+                  </CDBSidebarMenuItem>
+                </NavLink> */}
+                <SideBarCommunityModal addPost={this.props.addPost}/>
+
+               
+                
+                  
+                
+              </CDBSidebarMenu>
+            </CDBSidebarContent>
+
+           
+          </CDBSidebar>
+        </div>
+
+       
       </div>
-    )
+    );
   }
 }
 
-export default CommunitySideBar
+export default CommunitySideBar;
