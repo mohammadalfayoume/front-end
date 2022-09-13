@@ -40,6 +40,10 @@ return (
                 className="fs-5 text-uppercase px-3 fw-bold" href="/profile">
                 Profile
               </Nav.Link> } 
+              {isAuthenticated && <Nav.Link
+                className="fs-5 text-uppercase px-3 fw-bold" href="/community">
+                Community
+              </Nav.Link> } 
               <Nav.Link
                 className="fs-5 text-uppercase px-3 fw-bold" href="/about" >
                 About Us

@@ -1,7 +1,7 @@
 .secondary-nav-link:link,
 .secondary-nav-link:visited {
   text-decoration: none;
-  color: #ccc;
+  color: black !important;
   font-size: 1.2rem;
   font-weight: 400;
   padding: 0.5rem 1rem;
