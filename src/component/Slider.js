@@ -26,7 +26,7 @@ class Slider extends React.Component {
           <h3>{item.headline}</h3>
           <p>{item.description}</p>
           {/* <p>{item.content}</p> */}
-          <h5><a href={item.url} target='_blank' rel="noreferrer">See more...</a></h5>
+          <h5><a href={item.url} target='_blank' rel="noopener noreferrer">See more...</a></h5>
 
         </Carousel.Caption>
       </Carousel.Item>
