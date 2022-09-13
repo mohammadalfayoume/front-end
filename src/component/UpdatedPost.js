@@ -1,24 +1,22 @@
-import React, { Component } from "react";
+import React, { Component } from 'react'
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 
-class SideBarCommunityModal extends Component {
 
+class UpdatedPost extends Component {
   render() {
     return (
       <div>
-        
-
-        <Modal show={this.props.show} onHide={this.props.handleClose}>
+        <Modal show={this.props.showUpdate} onHide={this.props.closeUpdatePost}>
           <Modal.Header closeButton>
             <Modal.Title>Add Post</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <Form onSubmit={this.props.addPost}>
+            <Form onSubmit={this.props.updatedPost} >
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Title</Form.Label>
-                <Form.Control type="text" placeholder="Title..." name="title" />
+                <Form.Control type="text" placeholder="Title..." name="title" defaultValue={this.props.currentPost.title}/>
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -27,6 +25,7 @@ class SideBarCommunityModal extends Component {
                   type="text"
                   placeholder="Description..."
                   name="description"
+                  defaultValue={this.props.currentPost.description}
                 />
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -35,6 +34,7 @@ class SideBarCommunityModal extends Component {
                   type="text"
                   placeholder="Your Name..."
                   name="name"
+                  defaultValue={this.props.currentPost.name}
                 />
               </Form.Group>
 
@@ -44,7 +44,7 @@ class SideBarCommunityModal extends Component {
             </Form>
           </Modal.Body>
           <Modal.Footer>
-            <Button variant="secondary" onClick={this.props.handleClose}>
+            <Button variant="secondary" onClick={this.props.closeUpdatePost}>
               Close
             </Button>
             {/* <Button variant="primary" onClick={handleClose}>
@@ -53,8 +53,8 @@ class SideBarCommunityModal extends Component {
           </Modal.Footer>
         </Modal>
       </div>
-    );
+    )
   }
 }
 
-export default SideBarCommunityModal;
+export default UpdatedPost

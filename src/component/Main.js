@@ -30,29 +30,6 @@ class Main extends React.Component{
 
     }
 
-    addPost = (e) => {
-        e.preventDefault();
-        // const { user } = this.props.auth0;
-        const obj = {
-          title: e.target.title.value,
-          description: e.target.description.value,
-          name: e.target.name.value,
-        //   email: user.email
-        };
-        console.log(obj);
-        // console.log(obj)
-        axios
-          .post(`${URL}posts`, obj)
-          .then((result) => {
-            this.setState({
-                newsArray: result.data,
-            });
-          })
-          .catch((err) => {
-            console.log(err);
-          });
-      };
-
       /*----------Render News for Specific Catagory----------*/
   handleChange = async (query) => {
     const result = await axios.get(`${URL}searchNews?query=${query}`);
@@ -86,9 +63,9 @@ class Main extends React.Component{
           />
           <Slider newsArray={this.state.newsArray}/>
           
-          <div className="wrapper">
+          
           <NewsCard  newsArray={this.state.newsArray}/>
-          </div>
+          
           </>
       )
   }
