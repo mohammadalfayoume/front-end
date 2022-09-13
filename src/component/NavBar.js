@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
-// import { MDBContainer, MDBNavbar, MDBBtn, MDBCollapse } from "mdb-react-ui-kit";
-// import Nav from "react-bootstrap/Nav";
+import { MDBContainer, MDBNavbar, MDBBtn, MDBCollapse } from "mdb-react-ui-kit";
+import Nav from "react-bootstrap/Nav";
 import "../style/secondaryNav.css";
 
 class NavBar extends Component {
   render() {
     return (
       <div>
-        {/* <MDBNavbar expand="lg" light bgColor="light">
+        <MDBNavbar expand="lg" light bgColor="light">
         <MDBContainer fluid>
           <MDBCollapse
             navbar
@@ -22,49 +22,49 @@ class NavBar extends Component {
             >
               <Nav.Link
                 style={{ color: "black" }}
-                onClick={this.props.handleAllNews('sport')}
+                onClick={()=> this.props.handleChange('default')}
                 className="secondary-nav-link"
               >
                 All
               </Nav.Link>
               <Nav.Link
                 style={{ color: "black" }}
-                onClick={this.props.handleSport}
+                onClick={()=> this.props.handleChange('sport')}
                 className="secondary-nav-link"
               >
                 Sport
               </Nav.Link>
               <Nav.Link
                 style={{ color: "black" }}
-                onClick={this.props.handleTechnology}
+                onClick={()=> this.props.handleChange('technology')}
                 className="secondary-nav-link"
               >
                 Technology
               </Nav.Link>
               <Nav.Link
                 style={{ color: "black" }}
-                onClick={this.props.handleEntertainment}
+                onClick={()=> this.props.handleChange('entertainment')}
                 className="secondary-nav-link"
               >
                 Entertainment
               </Nav.Link>
               <Nav.Link
                 style={{ color: "black" }}
-                onClick={this.props.handleBusiness}
+                onClick={()=> this.props.handleChange('business')}
                 className="secondary-nav-link"
               >
                 Business
               </Nav.Link>
               <Nav.Link
                 style={{ color: "black" }}
-                onClick={this.props.handleHealth}
+                onClick={()=> this.props.handleChange('health')}
                 className="secondary-nav-link"
               >
                 Health
               </Nav.Link>
               <Nav.Link
                 style={{ color: "black" }}
-                onClick={this.props.handleScience}
+                onClick={()=> this.props.handleChange('science')}
                 className="secondary-nav-link"
               >
                 Science
@@ -86,7 +86,7 @@ class NavBar extends Component {
             </form>
           </MDBCollapse>
         </MDBContainer>
-      </MDBNavbar> */}
+      </MDBNavbar>
       </div>
     )
   }

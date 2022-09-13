@@ -3,9 +3,12 @@ import Slider from "./Slider";
 import NewsCard from "./NewsCard";
 import NavBar from "./NavBar";
 import CommunitySideBar from "./CommunitySideBar";
+import '../style/sideBar.css'
 import axios from "axios";
 import { withAuth0 } from '@auth0/auth0-react';
 
+
+let URL=process.env.REACT_APP_URL
 
 
 class Main extends React.Component{
@@ -17,7 +20,7 @@ class Main extends React.Component{
     }
     componentDidMount=()=>{
         axios
-        .get(`http://localhost:3001/news`)
+        .get(`${URL}news`)
         .then(result=>{
             this.setState({
                 newsArray:result.data
@@ -30,93 +33,79 @@ class Main extends React.Component{
 
     }
 
+    addPost = (e) => {
+        e.preventDefault();
+        // const { user } = this.props.auth0;
+        const obj = {
+          title: e.target.title.value,
+          description: e.target.description.value,
+          name: e.target.name.value,
+        //   email: user.email
+        };
+        console.log(obj);
+        // console.log(obj)
+        axios
+          .post(`${URL}posts`, obj)
+          .then((result) => {
+            this.setState({
+                newsArray: result.data,
+            });
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      };
+
       /*----------Render News for Specific Catagory----------*/
-  // handleChange = async (query) => {
-  //   const result = await axios.get(`${URL}news?q=${query}`);
-  //   const filteredNews = result.data.filter((item) => {
-  //     return item.image !== undefined;
-  //   });
+  handleChange = async (query) => {
+    const result = await axios.get(`${URL}searchNews?query=${query}`);
+    // console.log(result)
+    const filteredNews = result.data.filter((item) => {
+      return item.image !== undefined;
+    });
+    // console.log(filteredNews)
 
-  //   this.setState({
-  //     news: filteredNews,
-  //   });
-  // };
-  /*----------Handle Each Catagory----------*/
-  // handleAllNews = () => {
-  //   this.componentDidMount();
-  // };
+    this.setState({
+        newsArray: filteredNews,
+    });
+  };
 
-  // handleSport = () => {
-  //   this.handleChange("sports");
-  // };
 
-  // handleHealth = () => {
-  //   this.handleChange("health");
-  // };
 
-  // handleBusiness = () => {
-  //   this.handleChange("business");
-  // };
 
-  // handleEntertainment = () => {
-  //   this.handleChange("entertainment");
-  // };
-
-  // handleScience = () => {
-  //   this.handleChange("science");
-  // };
-
-  // handleTechnology = () => {
-  //   this.handleChange("technology");
-  // };
 
   /*----------Handle Search----------*/
-  // handleSearch = async (event) => {
-  //   event.preventDefault();
-  //   const keyword = event.target.search.value;
-  //   console.log(keyword);
-  //   this.handleChange(keyword);
-  //   // const url = `${URL}news?q=${keyword}`;
-  //   // console.log(url);
-  //   // const newsData = await axios.get(url);
-  //   // console.log(newsData.data);
-  //   // const filteredNews = newsData.data.filter((item) => {
-  //   //   return item.image !== null;
-  //   // });
-  //   // this.setState({
-  //   //   news: filteredNews,
-  //   // });
-  // };
+  handleSearch = async (event) => {
+    event.preventDefault();
+    const keyword = event.target.search.value;
+    console.log(keyword);
+    this.handleChange(keyword);
+    // const url = `${URL}news?q=${keyword}`;
+    // console.log(url);
+    // const newsData = await axios.get(url);
+    // console.log(newsData.data);
+    // const filteredNews = newsData.data.filter((item) => {
+    //   return item.image !== null;
+    // });
+    // this.setState({
+    //   news: filteredNews,
+    // });
+  };
 
-  // searchHandler = (event) => {
-  //   event.preventDefault();
-  //   const search = event.target.search.value;
-  //   console.log(search);
-  //   let newArr = this.state.newsData.filter((item) => {
-  //     if (search === "") return item;
-  //     else if (item.headline.toLowerCase().includes(search.toLowerCase()))
-  //       return item;
-  //   });
-  //   this.setState({
-  //     newsData: newArr,
-  //   });
-  // };
-
-
-    
   render(){
     const { isAuthenticated } = this.props.auth0;
       return(
           <>
          {/* { console.log(this.state.newsArray)} */}
-          
+         <NavBar 
+          handleChange={this.handleChange}
+          />
           <Slider newsArray={this.state.newsArray}/>
-          <NavBar />
           
+          <div className="wrapper">
           <NewsCard  newsArray={this.state.newsArray}/>
-          {isAuthenticated && <CommunitySideBar />}
-          
-
+          <div className="content"> {isAuthenticated &&<CommunitySideBar addPost={this.addPost}/>}</div>
+          </div>
           </>
       )
   }
