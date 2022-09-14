@@ -14,3 +14,8 @@
 .secondary-nav-link:link:active {
   color: #fff;
 }
+
+.secondary-nav-link:hover {
+
+  color:rgb(47, 0, 255) !important; 
+}
