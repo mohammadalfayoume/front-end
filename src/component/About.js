@@ -1,100 +1,83 @@
-import React, { Component } from 'react'
-import data from '../style/AboutUs.json'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React, { Component } from "react";
+import data from "../assets/AboutUs.json";
+import "bootstrap/dist/css/bootstrap.min.css";
 // import Card from "react-bootstrap/Card";
-import "../style/Aboutus.css"
-import {Col} from "react-bootstrap";
-import Accordion from 'react-bootstrap/Accordion';
-import Row from 'react-bootstrap/Row';
+import "../style/Aboutus.css";
+import { Col } from "react-bootstrap";
+import Accordion from "react-bootstrap/Accordion";
+import Row from "react-bootstrap/Row";
 
 class About extends Component {
   render() {
-    return(
+    return (
       <>
-      {
-      
-      <Accordion defaultActiveKey="0" className='acoord'>
-      <Accordion.Item eventKey="0">
-        <Accordion.Header> NEWS-LIVE</Accordion.Header>
-        <Accordion.Body ><h1>
-       Our News site with the idea of using
-         multiple sources for the news, that way our news wont be 
-         controlled by us and will share the facts regardless of the
-          outcome.
-           You will also be able to upload posts 
-        with their own local news as well as edit and delete them.</h1>
-        </Accordion.Body>
-      </Accordion.Item>
-      <Accordion.Item eventKey="1">
-        <Accordion.Header>NEWS-LIVE-TEAM</Accordion.Header>
-        <Accordion.Body>
-        <Row xs={1} md={2} className="g-4" >
-      {data.map(item=>{
-      return(
-        <div>
-      
-      <Col >
-      
-<div id="container"  >	
-	
-	<div class="product-details">
-		
-	<h1>{item.title}</h1>
-	<span class="hint-star star">
-		<i class="fa fa-star" aria-hidden="true"></i>
-		<i class="fa fa-star" aria-hidden="true"></i>
-		<i class="fa fa-star" aria-hidden="true"></i>
-		<i class="fa fa-star" aria-hidden="true"></i>
-		<i class="fa fa-star-o" aria-hidden="true"></i>
-	</span>
-		
-			<p class="information"> {item.description}</p>
+        {
+          <Accordion defaultActiveKey="1" className="acoord">
+            
+            <Accordion.Item eventKey="1">
 
-		
-		
+              <Accordion.Header>NEWS-LIVE-TEAM</Accordion.Header>
 
-			
-</div>
-	
-<div class="product-image">
-	
-	<img src={item.image_url} alt=""/>
-	
+              <Accordion.Body>
+                <Row xs={1} md={2} className="g-4">
+                  {data.map((item) => {
+                    return (
+                      <div>
+                        <Col>
+                          <div id="container">
+                            <div class="product-details">
+                              <h1>{item.title}</h1>
+                              <span class="hint-star star">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                              </span>
 
-<div class="info">
-	<h2> Description</h2>
-	<ul>
-		<li><strong>Age: </strong>5 Ft </li>
-		<li><strong>Email : </strong>Olive green</li>
-		
-		
-	</ul>
-</div>
-</div>
+                              <p class="information"> {item.description}</p>
+                            </div>
 
-</div>
+                            <div class="product-image">
+                              <img src={item.image_url} alt="" />
 
-
-            </Col>
-        </div>
-      )
-      
-      
-      
-      })}
-      
-      
-      </Row>
-        </Accordion.Body>
-      </Accordion.Item>
-      </Accordion>
-        
-      }
-      
+                              <div class="info">
+                                <h2> Description</h2>
+                                <ul>
+                                  <li>
+                                    <strong>Age: {item.age}</strong>
+                                  </li>
+                                  <li>
+                                    <strong>Email: {item.email}</strong>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </Col>
+                      </div>
+                    );
+                  })}
+                </Row>
+              </Accordion.Body>
+            </Accordion.Item>
+            <Accordion.Item eventKey="1">
+              <Accordion.Header> NEWS-LIVE</Accordion.Header>
+              <Accordion.Body>
+                <h1>
+                  Our News site with the idea of using multiple sources for the
+                  news, that way our news wont be controlled by us and will
+                  share the facts regardless of the outcome. You will also be
+                  able to upload posts with their own local news as well as edit
+                  and delete them.
+                </h1>
+              </Accordion.Body>
+            </Accordion.Item>
+          </Accordion>
+        }
       </>
-      
-        )
+    );
   }
 }
 
-export default About
+export default About;

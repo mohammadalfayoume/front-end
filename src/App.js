@@ -29,10 +29,8 @@ class App extends React.Component{
               <Route exact path="/contact" element={<Contact />}></Route>
               {isAuthenticated  &&  (<Route exact path="/profile" element={<Profile />}></Route> )}
               {isAuthenticated  &&  (<Route exact path="/community" element={<CommunitySideBar />}></Route> )}
-            
-    
-
-           
+              
+  
           </Routes>
           
         </Router>

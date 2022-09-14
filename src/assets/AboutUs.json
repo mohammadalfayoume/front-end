@@ -5,14 +5,19 @@
         "_id": 1,
         "image_url": "https://avatars.githubusercontent.com/u/109733595?v=4",
         "title": "Mahmoud Qunbor",
-        "description": "I'm a Student at LTUC studying software engineering in Jordan."
+        "description": "Software Engineer",
+        "age":"23",
+        "email": "modesq.99q@gmail.com"
+        
         
       },
     {
       "_id": 6,
       "image_url": "https://avatars.githubusercontent.com/u/109734632?v=4",
       "title": "Mohannad Jaser",
-      "description": "studied Computer Information System"
+      "description": "Software Engineer",
+      "age":"23",
+      "email": "ghbashneh99@gmail.com"
       
       
     },
@@ -20,30 +25,38 @@
       "_id": 2,
       "image_url": "https://avatars.githubusercontent.com/u/109732786?v=4",
       "title": "Lujain Aljarrah",
-      "description": "Pharm.D, Programmer, restrict to healthy lifestyle"
+      "description": "Software Engineer",
+      "age":"24",
+      "email": "Lujainaljarrah92@gmail.com"
      
     },
     {
       "_id": 3,
       "image_url": "https://avatars.githubusercontent.com/u/109729591?v=4",
       "title": "Mohammad Alfayoume",
-      "description": "Full Stack | Python - Web Developer in progress"
+      "description": "Software Engineer",
+      "age":"23",
+      "email": "mabed3819@gmail.com"
      
     },
     {
       "_id": 4,
       "image_url": "https://avatars.githubusercontent.com/u/109731820?s=400&u=d11bdcb9ea9ddab5d757408b0e5c570505975444&v=4",
       "title": "abeer alshboul",
-      "description": "Computer science-Web Developer"
+      "description": "Software Engineer",
+      "age":"23",
+      "email": "abeer.shboul@yahoo.com"
      
     },
     {
       "_id": 5,
       "image_url": "https://avatars.githubusercontent.com/u/109732898?v=4",
       "title": "Dina alshboul",
-      "description": "Computer engineering *Trained in orange as an android developer "
-      
+      "description": "Software Engineer",
+      "age":"29",
+      "email": "dinaalshboul@gmail.com"
     }
+
    
   ]
   
