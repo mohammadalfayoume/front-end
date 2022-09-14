@@ -48,10 +48,7 @@ class NewsCard extends React.Component {
                 <div class="card__description">
                 <button onClick={()=>this.showModalFunction(item.headline)} class="button"><span>More Info </span></button></div>
             </div>
-            <footer class="card__footer">
-                <span class="icon ion-clock"></span> Source :{item.source}
-                <span class="icon ion-chatbox"></span><a href="/"> Date:{item.date}</a>
-            </footer>
+            
         </article>
     </div>
                 </Col>

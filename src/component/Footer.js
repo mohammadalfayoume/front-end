@@ -17,60 +17,62 @@ class Footer extends React.Component {
         <section className="">
           <MDBContainer className="text-center text-md-start mt-5">
             <MDBRow className="mt-3">
-              <MDBCol md="3" lg="3" xl="4" className="mx-auto mb-4">
-                <h6 className="text-uppercase fw-bold text-white pt-2 footer-heading">
+              <MDBCol md="3" lg="3" xl="4" className="first-nav-link">
+                <h6 className="text-uppercase fw-ystem-ui text-white pt-2 footer-heading">
                   Links
                 </h6>
 
-                <a href="/" className="text-white text-decoration-none">
+                <a href="/" className="first-nav-link">
                   Home
                 </a>
-                <p></p>
+                
 
-                <a href="/about" className="text-white text-decoration-none">
+                <a href="/about" className="first-nav-link">
                   About Us
                 </a>
-                <p></p>
-                <a href="/profile" className="text-white text-decoration-none">
+                
+                <a href="/profile" className="first-nav-link">
                   Profile
                 </a>
-                <p></p>
+                
                 <a
                   href="/community"
-                  className="text-white text-decoration-none"
+                  className="first-nav-link"
                 >
                   Community
                 </a>
-                <p></p>
-                <a href="/contact" className="text-white text-decoration-none">
+                
+                <a href="/contact" className="first-nav-link">
                   Contact Us
                 </a>
-                <p></p>
+                
               </MDBCol>
-              <MDBCol md="3" lg="3" xl="4 " className="mx-auto mb-4">
+              <MDBCol md="3" lg="3" xl="4 " className="first-nav-link">
                 <div className="d-flex align-items-center gap-3">
                   <img src={logo} alt="Logo" className="footer-logo" />
-                  <h6 className="text-uppercase fw-bold text-white pt-2 footer-heading">
+                  <h6 className="text-uppercase fw-ystem-ui text-white pt-2 footer-heading">
                     NEWS LIVE
                   </h6>
                 </div>
-                <p className="text-white mt-4 footer-text">
+                <p className="text-white  fw-ystem-ui mt-4 footer-text">
                   Here we will tell you what is happening in the world around
                   you. any new or noteworthy information received Most
                   importantly, you will find information about current events
                   here.
                 </p>
+
+               
               </MDBCol>
 
-              <MDBCol md="3" lg="3" xl="4" className="mx-auto mb-4">
-                <h6 className="text-uppercase fw-bold text-white pt-2 footer-heading">
+              <MDBCol md="3" lg="3" xl="4" className="first-nav-link">
+                <h6 className="text-uppercase fw-ystem-ui text-white pt-2 footer-heading">
                   Contact
                 </h6>
 
                 <p className="text-white">
                   <MDBIcon
                     icon="home"
-                    className="text-white text-decoration-none"
+                    className="text-white fw-ystem-ui  text-decoration-none"
                   />
                   Jordan , Amman
                 </p>
@@ -78,7 +80,7 @@ class Footer extends React.Component {
                 <p className="text-white">
                   <MDBIcon
                     icon="envelope"
-                    className="text-white text-decoration-none"
+                    className="text-white fw-ystem-ui text-decoration-none"
                   />
                   NEWS.LIVE@gmail.com
                 </p>
@@ -109,7 +111,7 @@ class Footer extends React.Component {
           </MDBContainer>
         </section>
 
-        <div className="text-center pt-3 pb-1 text-white">
+        <div className="text-center  fw-ystem-ui pt-3 pb-1 text-white">
           <p>
             &copy;{new Date().getFullYear()} NEWS LIVE website - All Right
             Reserved

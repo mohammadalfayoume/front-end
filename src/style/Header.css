@@ -4,6 +4,7 @@
   color:white !important;
   margin:5px !important;
   font-size: 20px !important;
+  font-family: system-ui;
 
 }
 .logo-img {
@@ -12,7 +13,7 @@
 }
 .navbar .navbar-nav .nav:hover  {
 
-  color:red !important; 
+  color:rgb(255, 51, 51) !important; 
 }
 
 .nav1{
@@ -23,3 +24,6 @@
   font-size: 18px !important;
 
 }
+
+
+
