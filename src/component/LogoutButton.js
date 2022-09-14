@@ -1,6 +1,7 @@
 import React from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import '../style/logout.css'
+import Button from 'react-bootstrap/Button';
 
 function LogoutButton() {
   const {
@@ -9,9 +10,9 @@ function LogoutButton() {
   } = useAuth0();
 
   return isAuthenticated && (
-    <button className='' onClick={() => {
+    <Button  variant="primary" onClick={() => {
       logout({ returnTo: window.location.origin });
-    }}>Log out</button>
+    }}>Log out</Button>
   );
 }
 

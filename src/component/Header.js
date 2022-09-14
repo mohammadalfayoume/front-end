@@ -10,7 +10,6 @@ import { withAuth0 } from "@auth0/auth0-react";
 
 class Header extends React.Component {
   render() {
-    const { user } = this.props.auth0;
     const { isAuthenticated } = this.props.auth0;
     return (
       <div>
@@ -18,7 +17,7 @@ class Header extends React.Component {
           <Container>
             <Navbar.Brand
               style={{ color: "white" }}
-              className="d-flex gap-3 align-items-center fs-2 text-uppercase"
+              className="d-flex gap-3 fw-ystem-ui align-items-center fs-2 text-uppercase"
             >
               <img className="logo-img" src={logo} alt="logo" />
               NEWS LIVE
@@ -51,21 +50,18 @@ class Header extends React.Component {
                   Contact Us
                 </Nav.Link>
 
-                <NavItem className="nav1">
-                  <LoginButton />
-                </NavItem>
-
-
-                <NavItem className="nav1">
-                  <LogoutButton />
-                </NavItem>
-                {isAuthenticated && <NavItem className="nav1">
-                  {user.name}
-                </NavItem>}
+              <NavItem className="nav"><LoginButton /></NavItem>
+              <NavItem className="nav"><LogoutButton /></NavItem>
+                
+        
+                
+                
+               
               </Nav>
             </Navbar.Collapse>
           </Container>
         </Navbar>
+        
       </div>
     );
   }

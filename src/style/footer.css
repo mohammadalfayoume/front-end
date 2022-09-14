@@ -12,6 +12,34 @@
 }
 
 .footer-text {
+  font-family: system-ui;
   letter-spacing: 1px;
   line-height:1.5;
+}
+.navbar .navbar-nav .nav:hover  {
+
+  color:rgb(255, 51, 51) !important; 
+}
+
+.first-nav-link:link,
+.first-nav-link:visited {
+  text-decoration: none;
+  color: rgb(255, 251, 251) !important;
+  font-size: 20px;
+  font-weight: 400;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-left: -14px;
+}
+
+.first-nav-link:link:hover,
+.first-nav-link:link:active {
+  color: #fff;
+}
+
+.first-nav-link:hover {
+
+  color:rgb(241, 13, 13) !important; 
 }

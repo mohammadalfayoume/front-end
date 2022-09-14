@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { MDBContainer, MDBNavbar, MDBBtn, MDBCollapse } from "mdb-react-ui-kit";
+import { MDBContainer, MDBNavbar, MDBCollapse } from "mdb-react-ui-kit";
 import Nav from "react-bootstrap/Nav";
 import "../style/secondaryNav.css";
+import Button from 'react-bootstrap/Button';
 
 class NavBar extends Component {
   render() {
@@ -82,8 +83,12 @@ class NavBar extends Component {
                 aria-label="Search"
                 name="search"
               />
-              <MDBBtn color="primary">Search</MDBBtn>
+              <Button variant="primary" type="submit" >Search</Button>
             </form>
+
+
+
+            
           </MDBCollapse>
         </MDBContainer>
       </MDBNavbar>

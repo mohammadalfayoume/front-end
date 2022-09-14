@@ -2,7 +2,7 @@
 .secondary-nav-link:visited {
   text-decoration: none;
   color: black !important;
-  font-size: 1.2rem;
+  font-size: 20px;
   font-weight: 400;
   padding: 0.5rem 1rem;
   display: flex;
@@ -17,5 +17,5 @@
 
 .secondary-nav-link:hover {
 
-  color:rgb(47, 0, 255) !important; 
+  color:rgb(13, 17, 241) !important; 
 }
