@@ -9,9 +9,12 @@ import logo from "../assets/logo3.png";
 import React from "react";
 import { SocialIcon } from "react-social-icons";
 import "../style/footer.css";
+import { withAuth0 } from "@auth0/auth0-react";
 
 class Footer extends React.Component {
   render() {
+    const { isAuthenticated } = this.props.auth0;
+
     return (
       <MDBFooter bgColor="dark" className="footer--pin">
         <section className="">
@@ -31,16 +34,17 @@ class Footer extends React.Component {
                   About Us
                 </a>
                 
+                {isAuthenticated &&
                 <a href="/profile" className="first-nav-link">
                   Profile
-                </a>
-                
+                </a>}
+                {isAuthenticated &&    
                 <a
                   href="/community"
                   className="first-nav-link"
                 >
                   Community
-                </a>
+                </a>}
                 
                 <a href="/contact" className="first-nav-link">
                   Contact Us
@@ -122,4 +126,4 @@ class Footer extends React.Component {
   }
 }
 
-export default Footer;
+export default withAuth0 (Footer);
