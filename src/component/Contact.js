@@ -14,7 +14,7 @@ class Contact extends Component {
     return (
       <>
 
-      <div class="container contact">
+      <div class="container contact" style={{margin:'50px 0 50px'}}>
         <div class="row">
           <div class="col-md-3">
             <div class="contact-info">

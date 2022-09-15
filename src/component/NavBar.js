@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { MDBContainer, MDBNavbar, MDBCollapse } from "mdb-react-ui-kit";
 import Nav from "react-bootstrap/Nav";
 import "../style/secondaryNav.css";
-import Button from 'react-bootstrap/Button';
+// import Button from 'react-bootstrap/Button';
 
 class NavBar extends Component {
   render() {
@@ -79,11 +79,11 @@ class NavBar extends Component {
               <input
                 type="search"
                 className="form-control"
-                placeholder="Type query"
+                placeholder="Search..."
                 aria-label="Search"
                 name="search"
               />
-              <Button variant="primary" type="submit" >Search</Button>
+              <button style={{backgroundColor:'#0d6efd',padding:'3px 7px',borderRadius:'7px'}} variant="primary" type="submit" >Search</button>
             </form>
 
 

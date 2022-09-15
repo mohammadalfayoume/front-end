@@ -9,13 +9,13 @@ class NewsModal extends React.Component{
         
         <Modal show={this.props.showModal} onHide={this.props.closeModalFunction}>
         <Modal.Header closeButton>
-          <Modal.Title>{this.props.dataOfNews.headline}</Modal.Title>
+          <Modal.Title style={{color:'black'}}>{this.props.dataOfNews.headline}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <img src={this.props.dataOfNews.image} alt={this.props.dataOfNews.headline} style={{width:'100%'}}/> 
 
-         <p>{this.props.dataOfNews.content}</p>
-         <p>{this.props.dataOfNews.date}</p>
+         <p style={{color:'black'}}>{this.props.dataOfNews.content}</p>
+         <p style={{color:'black'}}>{this.props.dataOfNews.date}</p>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={this.props.closeModalFunction}>
