@@ -52,6 +52,7 @@ class NewsCard extends React.Component {
                       </Button>
                     </Card.Body>
                   </Card>
+
                 </Col>
               );
             })}
@@ -69,20 +70,3 @@ class NewsCard extends React.Component {
 }
 
 export default NewsCard;
-
-// <Col><Card style={{ width: '18rem',height:'540px' }}>
-
-//   <Card.Img variant="top" src={item.image} className="image" style={{height:'200px'}}/>
-//   <Card.Body style={{display:'flex',justifyContent:'space-between',gap:'5px',flexDirection:'column'}}>
-//     <Card.Title>{item.headline}</Card.Title>
-//     <Card.Text>
-
-//       <br></br>
-//       {/* <p> {item.description}</p> */}
-//       <br></br>
-//       <p><span>Date: {item.date}</span> <br></br> <span>Source: {item.source}</span> </p>
-
-//     </Card.Text>
-//     <Button variant="primary" onClick={()=>this.showModalFunction(item.headline)}> Show </Button>
-//   </Card.Body>
-// </Card></Col>
