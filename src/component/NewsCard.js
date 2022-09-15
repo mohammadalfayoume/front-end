@@ -4,6 +4,7 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
+import '../style/newsCard.css'
 class NewsCard extends React.Component {
   constructor(props) {
     super(props);
@@ -30,16 +31,16 @@ class NewsCard extends React.Component {
   render() {
     return (
       <>
-        <div style={{ width: "90%", margin: "auto" }} >
+        <div style={{ width: "90%", margin: "auto" }}>
           <Row xs={1} md={3} className="g-4">
-            {this.props.newsArray.slice(11,31).map((item) => {
+            {this.props.newsArray.slice(11, 32).map((item) => {
               return (
                 <Col>
-                  <Card className='card'>
+                  <Card className="c" style={{width:'90%',height:'480px'}}>
                     <Card.Img variant="top" src={item.image} alt="" />
                     <Card.Body>
-                      <Card.Title>{item.headline}</Card.Title>
-                      <Card.Text>
+                      <Card.Title style={{color:'black'}}>{item.headline}</Card.Title>
+                      <Card.Text style={{color:'black'}}>
                         <p>Source :{item.source}</p>
                         <p>Date:{item.date}</p>
                       </Card.Text>
@@ -52,7 +53,6 @@ class NewsCard extends React.Component {
                       </Button>
                     </Card.Body>
                   </Card>
-
                 </Col>
               );
             })}

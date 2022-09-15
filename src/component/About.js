@@ -13,7 +13,18 @@ class About extends Component {
       <>
         {
           <Accordion defaultActiveKey="1" className="acoord">
-            
+            <Accordion.Item eventKey="1">
+              <Accordion.Header> NEWS-LIVE</Accordion.Header>
+              <Accordion.Body>
+                <h1 style={{fontSize:'30px', margin:'0 5px 0'}}>
+                  Our News site with the idea of using multiple sources for the
+                  news, that way our news wont be controlled by us and will
+                  share the facts regardless of the outcome. You will also be
+                  able to upload posts with their own local news as well as edit
+                  and delete them.
+                </h1>
+              </Accordion.Body>
+            </Accordion.Item>
             <Accordion.Item eventKey="1">
 
               <Accordion.Header>NEWS-LIVE-TEAM</Accordion.Header>
@@ -61,18 +72,7 @@ class About extends Component {
                 </Row>
               </Accordion.Body>
             </Accordion.Item>
-            <Accordion.Item eventKey="1">
-              <Accordion.Header> NEWS-LIVE</Accordion.Header>
-              <Accordion.Body>
-                <h1>
-                  Our News site with the idea of using multiple sources for the
-                  news, that way our news wont be controlled by us and will
-                  share the facts regardless of the outcome. You will also be
-                  able to upload posts with their own local news as well as edit
-                  and delete them.
-                </h1>
-              </Accordion.Body>
-            </Accordion.Item>
+            
           </Accordion>
         }
       </>
