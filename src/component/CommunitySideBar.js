@@ -1,10 +1,19 @@
 import React, { Component } from "react";
+import "../style/Community.css";
 import SideBarCommunityModal from "./SideBarCommunityModal";
 import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
+// import PostCard from "./PostCard";
+
+import {
+  MDBCard,
+  MDBCardBody,
+  MDBCardTitle,
+  MDBCardText,
+  MDBCardImage,
+} from "mdb-react-ui-kit";
+
 import UpdatedPost from "./UpdatedPost";
+
 import { withAuth0 } from "@auth0/auth0-react";
 
 import axios from "axios";
@@ -59,6 +68,7 @@ class CommunitySideBar extends Component {
       description: e.target.description.value,
       name: user.name,
       email: user.email,
+      image: e.target.image.value,
     };
     console.log(post);
     axios
@@ -111,7 +121,8 @@ class CommunitySideBar extends Component {
       title: e.target.title.value,
       description: e.target.description.value,
       name: user.name,
-      email: user.email
+      email: user.email,
+      image: e.target.image.value,
     };
     const id = this.state.currentPost._id;
     axios
@@ -130,9 +141,10 @@ class CommunitySideBar extends Component {
 
   render() {
     const { user } = this.props.auth0;
+
     return (
       <>
-        <Button variant="primary" onClick={this.handleShow}>
+        <Button variant="primary" onClick={this.handleShow} className="btn">
           Add Post
         </Button>
 
@@ -140,41 +152,58 @@ class CommunitySideBar extends Component {
           addPost={this.addPost}
           show={this.state.show}
           handleClose={this.handleClose}
-        />
+        />  
 
-        <Row xs={1} md={3} className="g-4">
-          {this.state.posts.map((item) => {
-            return (
-              <Col>
-                <Card>
-                  <Card.Body>
-                    <Card.Title>{item.title}</Card.Title>
-                    <Card.Text>
-                      <p>{item.description}</p>
-                      <p>{item.name}</p>
-                      {user.email===item.email && (
+        {this.state.posts.map((item) => {
+          return (
+            <MDBCard className="card">
+              <MDBCardImage position="top" src={item.image} alt="..." />
+              <MDBCardBody>
+                <div className="title">
+                  <MDBCardTitle>
+                    <h2 className="text">{item.title}</h2>
+                  </MDBCardTitle>
+                  <p className="text">
+                    Published by <b>{item.name}</b>
+                  </p>
+                </div>
+                <MDBCardText>
+                  <p className="text">{item.description}</p>
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "end",
+                    }}
+                  >
+                    <div>
+                      {user.email === item.email && (
                         <>
                           <Button
+                            className="btttn"
                             variant="secondary"
                             onClick={() => this.handleDelete(item._id)}
                           >
                             Delete
                           </Button>
                           <Button
+                            className="btttn btn"
                             variant="secondary"
                             onClick={() => this.openUpdatePost(item)}
                           >
-                            Update
+                            Edit
                           </Button>
                         </>
                       )}
-                    </Card.Text>
-                  </Card.Body>
-                </Card>
-              </Col>
-            );
-          })}
-        </Row>
+                    </div>
+                  </div>
+                </MDBCardText>
+                <MDBCardText></MDBCardText>
+              </MDBCardBody>
+            </MDBCard>
+          );
+        })}
+
         <UpdatedPost
           showUpdate={this.state.showUpdate}
           closeUpdatePost={this.closeUpdatePost}
