@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import data from "../assets/AboutUs.json";
 import "bootstrap/dist/css/bootstrap.min.css";
-// import Card from "react-bootstrap/Card";
 import "../style/Aboutus.css";
 import { Col } from "react-bootstrap";
 import Accordion from "react-bootstrap/Accordion";
@@ -16,7 +15,7 @@ class About extends Component {
             <Accordion.Item eventKey="1">
               <Accordion.Header> NEWS-LIVE</Accordion.Header>
               <Accordion.Body>
-                <h1 style={{fontSize:'30px', margin:'0 5px 0'}}>
+                <h1 style={{ fontSize: "30px", margin: "0 5px 0" }}>
                   Our News site with the idea of using multiple sources for the
                   news, that way our news wont be controlled by us and will
                   share the facts regardless of the outcome. You will also be
@@ -26,7 +25,6 @@ class About extends Component {
               </Accordion.Body>
             </Accordion.Item>
             <Accordion.Item eventKey="1">
-
               <Accordion.Header>NEWS-LIVE-TEAM</Accordion.Header>
 
               <Accordion.Body>
@@ -72,7 +70,6 @@ class About extends Component {
                 </Row>
               </Accordion.Body>
             </Accordion.Item>
-            
           </Accordion>
         }
       </>

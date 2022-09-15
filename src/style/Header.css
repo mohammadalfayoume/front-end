@@ -1,29 +1,25 @@
-.nav{
-  display: flex;
-  gap: 15px;
+.nav {
   color:white !important;
-  margin:5px !important;
-  font-size: 20px !important;
+  font-size: 18px !important;
   font-family: system-ui;
-
 }
+
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px
+}
+
+.routs {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+  
 .logo-img {
-  width: 90px !important;
-  margin:-11px !important;
+  width: 90px;
 }
 .navbar .navbar-nav .nav:hover  {
 
   color:rgb(255, 51, 51) !important; 
 }
-
-.nav1{
-  display: flex;
-  gap: 15px;
-  color:black !important;
-  margin:5px !important;
-  font-size: 18px !important;
-
-}
-
-
-

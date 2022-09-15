@@ -1,13 +1,21 @@
-import React from 'react';
-import { useAuth0 } from '@auth0/auth0-react';
-
-import Button from 'react-bootstrap/Button';
+import React from "react";
+import { useAuth0 } from "@auth0/auth0-react";
+import "../style/log.css"
+import Button from "react-bootstrap/Button";
 
 function LoginButton() {
-  const {isAuthenticated, loginWithRedirect,} = useAuth0();
+  const { isAuthenticated, loginWithRedirect } = useAuth0();
 
-  return !isAuthenticated && (
-    <Button variant="primary" style={{ padding:"0 10px"}} onClick={loginWithRedirect}  >Log in</Button>
+  return (
+    !isAuthenticated && (
+      <Button
+        className="log"
+        variant="primary"
+        onClick={loginWithRedirect}
+      >
+        Log in
+      </Button>
+    )
   );
 }
 

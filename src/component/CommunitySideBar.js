@@ -2,16 +2,7 @@ import React, { Component } from "react";
 import "../style/Community.css";
 import SideBarCommunityModal from "./SideBarCommunityModal";
 import Button from "react-bootstrap/Button";
-// import PostCard from "./PostCard";
-
-import {
-  MDBCard,
-  MDBCardBody,
-  MDBCardTitle,
-  MDBCardText,
-  MDBCardImage,
-} from "mdb-react-ui-kit";
-
+import PostCard from "./PostCard";
 import UpdatedPost from "./UpdatedPost";
 
 import { withAuth0 } from "@auth0/auth0-react";
@@ -85,7 +76,6 @@ class CommunitySideBar extends Component {
   };
 
   handleDelete = (id) => {
-    // const { user } = this.props.auth0;
     axios
       .delete(`${URL}deletePost/${id}`)
       .then((result) => {
@@ -140,7 +130,6 @@ class CommunitySideBar extends Component {
   };
 
   render() {
-    const { user } = this.props.auth0;
 
     return (
       <>
@@ -152,55 +141,15 @@ class CommunitySideBar extends Component {
           addPost={this.addPost}
           show={this.state.show}
           handleClose={this.handleClose}
-        />  
+        />
 
         {this.state.posts.map((item) => {
           return (
-            <MDBCard className="card">
-              <MDBCardImage position="top" src={item.image} alt="..." />
-              <MDBCardBody>
-                <div className="title">
-                  <MDBCardTitle>
-                    <h2 className="text">{item.title}</h2>
-                  </MDBCardTitle>
-                  <p className="text">
-                    Published by <b>{item.name}</b>
-                  </p>
-                </div>
-                <MDBCardText>
-                  <p className="text">{item.description}</p>
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                      alignItems: "end",
-                    }}
-                  >
-                    <div>
-                      {user.email === item.email && (
-                        <>
-                          <Button
-                            className="btttn"
-                            variant="secondary"
-                            onClick={() => this.handleDelete(item._id)}
-                          >
-                            Delete
-                          </Button>
-                          <Button
-                            className="btttn btn"
-                            variant="secondary"
-                            onClick={() => this.openUpdatePost(item)}
-                          >
-                            Edit
-                          </Button>
-                        </>
-                      )}
-                    </div>
-                  </div>
-                </MDBCardText>
-                <MDBCardText></MDBCardText>
-              </MDBCardBody>
-            </MDBCard>
+            <PostCard
+              data={item}
+              handleDelete={this.handleDelete}
+              openUpdatePost={this.openUpdatePost}
+            />
           );
         })}
 
