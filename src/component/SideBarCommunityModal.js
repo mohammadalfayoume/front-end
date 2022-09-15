@@ -2,26 +2,29 @@ import React, { Component } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
-import { withAuth0 } from '@auth0/auth0-react';
-import '../style/Community.css'
-
+import { withAuth0 } from "@auth0/auth0-react";
+import "../style/Community.css";
 
 class SideBarCommunityModal extends Component {
   render() {
     const { user } = this.props.auth0;
     return (
       <div>
-        
-
         <Modal show={this.props.show} onHide={this.props.handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title className="text">Add Post for <b>{user.name}</b></Modal.Title>
+            <Modal.Title className="text">
+              Add Post for <b>{user.name}</b>
+            </Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <Form onSubmit={this.props.addPost}>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label className="text">Image URL</Form.Label>
-                <Form.Control type="text" placeholder="image_url..." name="image" />
+                <Form.Control
+                  type="text"
+                  placeholder="image_url..."
+                  name="image"
+                />
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label className="text">Title</Form.Label>
@@ -42,7 +45,6 @@ class SideBarCommunityModal extends Component {
               </Button>
             </Form>
           </Modal.Body>
-          
         </Modal>
       </div>
     );

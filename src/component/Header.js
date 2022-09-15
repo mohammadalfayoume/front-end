@@ -13,7 +13,8 @@ class Header extends React.Component {
     const { isAuthenticated } = this.props.auth0;
     return (
       <div>
-        <Navbar bg="dark" expand="lg">
+        <Navbar bg="dark" id="nav_container" style={{display: "flex"}}>
+          
           <Container>
             <Navbar.Brand
               style={{ color: "white" }}
@@ -27,7 +28,8 @@ class Header extends React.Component {
               id="basic-navbar-nav"
               className="ml-auto justify-content-end"
             >
-              <Nav>
+              <Nav className='navBar'>
+              <div className="routs">
                 <Nav.Link className="nav" href="/">
                   Home
                 </Nav.Link>
@@ -49,19 +51,19 @@ class Header extends React.Component {
                 <Nav.Link className="nav" href="/contact">
                   Contact Us
                 </Nav.Link>
-
-              <NavItem className="nav"><LoginButton /></NavItem>
-              <NavItem className="nav"><LogoutButton /></NavItem>
-                
-        
-                
-                
-               
+                </div>
+                  <div>
+                <NavItem>
+                  <LoginButton />
+                </NavItem>
+                <NavItem>
+                  <LogoutButton />
+                </NavItem>
+                </div>
               </Nav>
             </Navbar.Collapse>
           </Container>
         </Navbar>
-        
       </div>
     );
   }

@@ -4,33 +4,30 @@ import NewsCard from "./NewsCard";
 import NavBar from "./NavBar";
 import axios from "axios";
 
+let URL = process.env.REACT_APP_URL;
 
-let URL=process.env.REACT_APP_URL
+class Main extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      newsArray: [],
+    };
+  }
+  componentDidMount = () => {
+    axios
+      .get(`${URL}news`)
+      .then((result) => {
+        this.setState({
+          newsArray: result.data,
+        });
+      })
 
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
-class Main extends React.Component{
-    constructor(props){
-        super(props);
-        this.state={
-            newsArray:[]
-        }
-    }
-    componentDidMount=()=>{
-        axios
-        .get(`${URL}news`)
-        .then(result=>{
-            this.setState({
-                newsArray:result.data
-            })
-        })
-        
-        .catch(err=>{
-            console.log(err);
-        })
-
-    }
-
-      /*----------Render News for Specific Catagory----------*/
+  /*----------Render News for Specific Catagory----------*/
   handleChange = async (query) => {
     const result = await axios.get(`${URL}searchNews?query=${query}`);
     // console.log(result)
@@ -40,7 +37,7 @@ class Main extends React.Component{
     // console.log(filteredNews)
 
     this.setState({
-        newsArray: filteredNews,
+      newsArray: filteredNews,
     });
   };
 
@@ -50,25 +47,21 @@ class Main extends React.Component{
     const keyword = event.target.search.value;
     console.log(keyword);
     this.handleChange(keyword);
-
   };
 
-  render(){
-      return(
-          <>
-         {/* { console.log(this.state.newsArray)} */}
-         <NavBar 
+  render() {
+    return (
+      <>
+        <NavBar
           handleChange={this.handleChange}
           handleSearch={this.handleSearch}
-          />
-          <Slider newsArray={this.state.newsArray}/>
-          
-          
-          <NewsCard  newsArray={this.state.newsArray}/>
-          
-          </>
-      )
+        />
+        <Slider newsArray={this.state.newsArray} />
+
+        <NewsCard newsArray={this.state.newsArray} />
+      </>
+    );
   }
 }
 
-export default Main 
+export default Main;

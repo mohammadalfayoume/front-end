@@ -2,9 +2,8 @@ import React, { Component } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
-import { withAuth0 } from '@auth0/auth0-react';
-import '../style/Community.css'
-
+import { withAuth0 } from "@auth0/auth0-react";
+import "../style/Community.css";
 
 class UpdatedPost extends Component {
   render() {
@@ -13,13 +12,20 @@ class UpdatedPost extends Component {
       <div>
         <Modal show={this.props.showUpdate} onHide={this.props.closeUpdatePost}>
           <Modal.Header closeButton>
-            <Modal.Title className="text">Add Post for <b>{user.name}</b></Modal.Title>
+            <Modal.Title className="text">
+              Add Post for <b>{user.name}</b>
+            </Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <Form onSubmit={this.props.updatedPost}>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label className="text">Image URL</Form.Label>
-                <Form.Control type="text" placeholder="image_url..." name="image" />
+                <Form.Control
+                  type="text"
+                  placeholder="image_url..."
+                  name="image"
+                  defaultValue={this.props.currentPost.image}
+                />
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label className="text">Title</Form.Label>
@@ -46,7 +52,6 @@ class UpdatedPost extends Component {
               </Button>
             </Form>
           </Modal.Body>
-          
         </Modal>
       </div>
     );

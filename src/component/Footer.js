@@ -1,3 +1,4 @@
+import React from "react";
 import {
   MDBCol,
   MDBContainer,
@@ -6,7 +7,6 @@ import {
   MDBRow,
 } from "mdb-react-ui-kit";
 import logo from "../assets/logo3.png";
-import React from "react";
 import { SocialIcon } from "react-social-icons";
 import "../style/footer.css";
 import { withAuth0 } from "@auth0/auth0-react";
@@ -28,28 +28,25 @@ class Footer extends React.Component {
                 <a href="/" className="first-nav-link">
                   Home
                 </a>
-                
 
                 <a href="/about" className="first-nav-link">
                   About Us
                 </a>
-                
-                {isAuthenticated &&
-                <a href="/profile" className="first-nav-link">
-                  Profile
-                </a>}
-                {isAuthenticated &&    
-                <a
-                  href="/community"
-                  className="first-nav-link"
-                >
-                  Community
-                </a>}
-                
+
+                {isAuthenticated && (
+                  <a href="/profile" className="first-nav-link">
+                    Profile
+                  </a>
+                )}
+                {isAuthenticated && (
+                  <a href="/community" className="first-nav-link">
+                    Community
+                  </a>
+                )}
+
                 <a href="/contact" className="first-nav-link">
                   Contact Us
                 </a>
-                
               </MDBCol>
               <MDBCol md="3" lg="3" xl="4 " className="first-nav-link">
                 <div className="d-flex align-items-center gap-3">
@@ -64,8 +61,6 @@ class Footer extends React.Component {
                   importantly, you will find information about current events
                   here.
                 </p>
-
-               
               </MDBCol>
 
               <MDBCol md="3" lg="3" xl="4" className="first-nav-link">
@@ -126,4 +121,4 @@ class Footer extends React.Component {
   }
 }
 
-export default withAuth0 (Footer);
+export default withAuth0(Footer);
