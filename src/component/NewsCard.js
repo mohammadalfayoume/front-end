@@ -32,7 +32,7 @@ class NewsCard extends React.Component {
       <>
         <div style={{ width: "90%", margin: "auto" }} >
           <Row xs={1} md={3} className="g-4">
-            {this.props.newsArray.slice(10, 31).map((item) => {
+            {this.props.newsArray.slice(11,31).map((item) => {
               return (
                 <Col>
                   <Card className='card'>

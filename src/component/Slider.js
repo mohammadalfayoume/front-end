@@ -6,7 +6,7 @@ class Slider extends React.Component {
   render() {
     return (
       <Carousel fade className="slider">
-        {this.props.newsArray.slice(0,11).map((item) => {
+        {this.props.newsArray.slice(0,10).map((item) => {
           return (
       <Carousel.Item>
         <div className="image">
