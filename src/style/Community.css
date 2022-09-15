@@ -1,0 +1,39 @@
+.card {
+    width: 60%;
+    margin: 40px auto;
+    
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.text {
+    color: black;
+}
+
+.btn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    padding: 10px 30px;
+    transition-duration: 0.4s;
+
+}
+
+.btttn {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: 5px;
+    background-color: rgb(98, 98, 172);
+}
+
+.like {
+    padding: 3px 10px;
+    background-color: rgb(17, 193, 220);
+    border: 1px solid black;
+    border-radius: 10px;
+}

@@ -1,10 +1,9 @@
 import React from "react";
 import NewsModal from "./NewsModal";
-// import Card from "react-bootstrap/Card";
-// import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import "../style/NewsCard.css";
 class NewsCard extends React.Component {
   constructor(props) {
     super(props);
@@ -31,29 +30,28 @@ class NewsCard extends React.Component {
   render() {
     return (
       <>
-        <div style={{ width: "80%", margin: "auto" }}>
+        <div style={{ width: "90%", margin: "auto" }} >
           <Row xs={1} md={3} className="g-4">
-            {this.props.newsArray.slice(10, 30).map((item) => {
+            {this.props.newsArray.slice(10, 31).map((item) => {
               return (
                 <Col>
-                  <div>
-        <article class="card">
-            <header class="card__thumb">
-                <a href="/"><img src={item.image}alt=""/></a>
-            </header>
-            
-            <div class="card__body">
-                
-                <h2 class="card__title"><a href="/">{item.headline}</a></h2>
-                <div class="card__description">
-                <button onClick={()=>this.showModalFunction(item.headline)} class="button"><span>More Info </span></button></div>
-            </div>
-            <footer class="card__footer">
-                <span class="icon ion-clock"></span> Source :{item.source}
-                <span class="icon ion-chatbox"></span><a href="/"> Date:{item.date}</a>
-            </footer>
-        </article>
-    </div>
+                  <Card className='card'>
+                    <Card.Img variant="top" src={item.image} alt="" />
+                    <Card.Body>
+                      <Card.Title>{item.headline}</Card.Title>
+                      <Card.Text>
+                        <p>Source :{item.source}</p>
+                        <p>Date:{item.date}</p>
+                      </Card.Text>
+                      <Button
+                        onClick={() => this.showModalFunction(item.headline)}
+                        variant="primary"
+                        type="submit"
+                      >
+                        Show More...
+                      </Button>
+                    </Card.Body>
+                  </Card>
                 </Col>
               );
             })}
