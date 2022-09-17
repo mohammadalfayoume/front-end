@@ -1,7 +1,12 @@
 .card {
-    width: 60%;
+    width: 70%;
     margin: 40px auto;
-    
+}
+
+.container {
+    display: flex;
+    justify-content:space-between;
+    align-items: flex-end;
 }
 
 .title {
@@ -14,20 +19,27 @@
     color: black;
 }
 
-.btn {
+.add {
     display: block;
     margin-left: auto;
     margin-right: auto;
     padding: 10px 30px;
     transition-duration: 0.4s;
-
+    margin-top: 30px;
 }
 
-.btttn {
-    display: inline-block;
-    margin-left: auto;
-    margin-right: 5px;
-    background-color: rgb(98, 98, 172);
+.btn5 {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.delete {
+    background-color: red;
+}
+
+.update {
+    background-color: green;
 }
 
 .like {
@@ -36,3 +48,25 @@
     border: 1px solid black;
     border-radius: 10px;
 }
+
+.image {
+    height: 350px;
+}
+
+@media screen and (max-width:400px) {
+    .title {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    
+    }
+    .container {
+        display: flex;
+        justify-content:space-between;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .image {
+        height: 270px;
+    }
+  }
