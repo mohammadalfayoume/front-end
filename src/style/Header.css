@@ -41,6 +41,29 @@
   color:rgb(255, 51, 51) !important; 
 }
 
+@media screen and (max-width:700px) {
+
+  .headerContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
+    text-align: center;
+    align-items: center;
+  }
+  .routs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 5px;
+  }
+  .navBar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 5px;
+  }
+}
 @media screen and (max-width:400px) {
 
   .headerContainer{

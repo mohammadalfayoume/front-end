@@ -27,6 +27,23 @@
   color:white !important ; 
 }
 
+@media screen and (max-width:700px) {
+
+  .navContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
+    text-align: center;
+    align-items: center;
+  }
+  .category {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 5px;
+  }
+}
 @media screen and (max-width:400px) {
 
   .navContainer{
