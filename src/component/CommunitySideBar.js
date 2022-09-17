@@ -133,7 +133,7 @@ class CommunitySideBar extends Component {
 
     return (
       <>
-        <Button variant="primary" onClick={this.handleShow} className="btn">
+        <Button variant="primary" onClick={this.handleShow} className="add">
           Add Post
         </Button>
 

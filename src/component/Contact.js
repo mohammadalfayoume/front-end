@@ -12,9 +12,8 @@ class Contact extends Component {
   render() {
     return (
       <>
-        <div class="container contact" style={{ margin: "50px 0 50px" }}>
+        <div class="container" style={{margin:'50px auto',width: '80%'}}>
           <div class="row">
-            <div class="col-md-3">
               <div class="contact-info">
                 <img
                   src="https://image.ibb.co/kUASdV/contact-image.png"
@@ -92,7 +91,6 @@ class Contact extends Component {
                   </div>
                 </div>
               </div>
-            </div>
           </div>
         </div>
       </>
