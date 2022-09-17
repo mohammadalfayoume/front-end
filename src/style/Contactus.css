@@ -52,6 +52,21 @@ body{
 
 
 
+@media screen and (max-width:700px) {
+    .col-md-9 {
+        width: 100%;
+        margin: auto;
+        align-items: center;
+    }
+    .contact-info{
+        margin-top:10%;
+        margin-bottom: 10%;
+        
+    }
+    .btn {
+        padding: 5px 0px;
+    }
+   }
 @media screen and (max-width:400px) {
     .col-md-9 {
         width: 100%;
