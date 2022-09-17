@@ -15,7 +15,7 @@ body {
   overflow: hidden;
   margin: 5em auto;
   height: 350px;
-  width: 600px;
+  width: 90%;
 }
 
 .product-details {
@@ -97,7 +97,7 @@ body {
   position: absolute;
   line-height: 1.8;
   text-align: left;
-  font-size: 105%;
+  font-size: 100%;
   cursor: no-drop;
   color: #fff;
   height: 100%;
@@ -129,4 +129,15 @@ h1 {
 }
 .product-image:hover img {
   transform: scale(1.2, 1.2);
+}
+
+@media screen and (max-width:400px) {
+  .info {
+    padding-top: 25px;
+    font-size: 50%;
+  }
+  #container {
+    height: 300px;
+    width: 95%;
+  }
 }

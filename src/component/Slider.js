@@ -25,8 +25,8 @@ class Slider extends React.Component {
                     Source: <b>{item.source}</b>
                   </span>
                 </div>
-                <h3>{item.headline}</h3>
-                <p>{item.description}</p>
+                <h3 className="data">{item.headline}</h3>
+                <p className="data">{item.description}</p>
                 {/* <p>{item.content}</p> */}
                 <h5>
                   <a href={item.url} target="_blank" rel="noopener noreferrer">

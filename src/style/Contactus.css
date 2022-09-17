@@ -2,20 +2,24 @@ body{
     background-color:beige;
 }
 
-.contact{
+.container {
     padding-bottom: "200px";
-   
-    margin-bottom: "100px";
+    margin-bottom: "200px";
+    width: 80% ;
+    margin: auto;
+    align-items: center;
 }
 
 .col-md-3{
-    /* background: #ff9b00; */
+    background: #ff9b00;
     padding: 4%;
     border-top-left-radius: 0.5rem;
     border-bottom-left-radius: 0.5rem;
 }
 .contact-info{
     margin-top:10%;
+    margin-bottom: 50%;
+    
 }
 .contact-info img{
     margin-bottom: 15%;
@@ -30,6 +34,7 @@ body{
     border-top-right-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
 }
+
 .contact-form label{
     font-weight:600;
 }
@@ -38,8 +43,27 @@ body{
     background: #25274d;
     color:#ff9b00;
     font-weight: 600;
+    margin-top: 10px;
     width: 25%;
 }
 .contact-form button:focus{
     box-shadow:coral;
 }
+
+
+
+@media screen and (max-width:400px) {
+    .col-md-9 {
+        width: 100%;
+        margin: auto;
+        align-items: center;
+    }
+    .contact-info{
+        margin-top:10%;
+        margin-bottom: 10%;
+        
+    }
+    .btn {
+        padding: 5px 0px;
+    }
+   }

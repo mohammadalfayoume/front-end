@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  MDBCol,
-  MDBContainer,
-  MDBFooter,
-  MDBIcon,
-  MDBRow,
+import {  MDBIcon,
 } from "mdb-react-ui-kit";
 import logo from "../assets/logo3.png";
 import { SocialIcon } from "react-social-icons";
@@ -16,11 +11,9 @@ class Footer extends React.Component {
     const { isAuthenticated } = this.props.auth0;
 
     return (
-      <MDBFooter bgColor="dark" className="footer--pin">
-        <section className="">
-          <MDBContainer className="text-center text-md-start mt-5">
-            <MDBRow className="mt-3">
-              <MDBCol md="3" lg="3" xl="4" className="first-nav-link">
+      <div className="footerContainer">
+        <div className="footer">
+              <div className="column">
                 <h6 className="text-uppercase fw-ystem-ui text-white pt-2 footer-heading">
                   Links
                 </h6>
@@ -47,9 +40,9 @@ class Footer extends React.Component {
                 <a href="/contact" className="first-nav-link">
                   Contact Us
                 </a>
-              </MDBCol>
-              <MDBCol md="3" lg="3" xl="4 " className="first-nav-link">
-                <div className="d-flex align-items-center gap-3">
+              </div>
+              <div className="column">
+                <div className="logo">
                   <img src={logo} alt="Logo" className="footer-logo" />
                   <h6 className="text-uppercase fw-ystem-ui text-white pt-2 footer-heading">
                     NEWS LIVE
@@ -61,9 +54,9 @@ class Footer extends React.Component {
                   importantly, you will find information about current events
                   here.
                 </p>
-              </MDBCol>
+              </div>
 
-              <MDBCol md="3" lg="3" xl="4" className="first-nav-link">
+              <div className="column">
                 <h6 className="text-uppercase fw-ystem-ui text-white pt-2 footer-heading">
                   Contact
                 </h6>
@@ -105,10 +98,8 @@ class Footer extends React.Component {
                     bgColor="#FFFFFF"
                   />
                 </div>
-              </MDBCol>
-            </MDBRow>
-          </MDBContainer>
-        </section>
+              </div>
+        </div>
 
         <div className="text-center  fw-ystem-ui pt-3 pb-1 text-white">
           <p>
@@ -116,7 +107,7 @@ class Footer extends React.Component {
             Reserved
           </p>
         </div>
-      </MDBFooter>
+        </div>
     );
   }
 }

@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import Button from "react-bootstrap/Button";
 import { withAuth0 } from "@auth0/auth0-react";
+import "../style/Community.css";
+
 
 import {
-  MDBCard,
   MDBCardBody,
   MDBCardTitle,
   MDBCardText,
@@ -36,8 +37,8 @@ class PostCard extends Component {
     const { user } = this.props.auth0;
     return (
       <div>
-        <MDBCard className="card">
-          <MDBCardImage position="top" src={this.props.data.image} alt="..." />
+        <div className="card">
+          <MDBCardImage position="top" src={this.props.data.image} alt="..." className="image" />
           <MDBCardBody>
             <div className="title">
               <MDBCardTitle>
@@ -49,37 +50,9 @@ class PostCard extends Component {
             </div>
             <MDBCardText>
               <p className="text">{this.props.data.description}</p>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "end",
-                }}
+              <div className="container"
               >
-                <div>
-                  {user.email === this.props.data.email && (
-                    <>
-                      <Button
-                        className="btttn"
-                        variant="secondary"
-                        onClick={() =>
-                          this.props.handleDelete(this.props.data._id)
-                        }
-                      >
-                        Delete
-                      </Button>
-                      <Button
-                        className="btttn btn"
-                        variant="secondary"
-                        onClick={() =>
-                          this.props.openUpdatePost(this.props.data)
-                        }
-                      >
-                        Edit
-                      </Button>
-                    </>
-                  )}
-                </div>
+                
                 <div>
                   <button onClick={this.likeHandler} className="like">
                     👍
@@ -103,7 +76,6 @@ class PostCard extends Component {
                   <span
                     style={{
                       color: "red",
-                      marginRight: "10px",
                       border: "1px solid black",
                       padding: "2px 5px",
                       backgroundColor: "#fff",
@@ -114,11 +86,35 @@ class PostCard extends Component {
                     {this.state.counterDislike}
                   </span>
                 </div>
+                <div className="btn5">
+                  {user.email === this.props.data.email && (
+                    <>
+                      <Button
+                        className="delete"
+                        variant="secondary"
+                        onClick={() =>
+                          this.props.handleDelete(this.props.data._id)
+                        }
+                      >
+                        Delete
+                      </Button>
+                      <Button
+                        className="update"
+                        variant="secondary"
+                        onClick={() =>
+                          this.props.openUpdatePost(this.props.data)
+                        }
+                      >
+                        Edit
+                      </Button>
+                    </>
+                  )}
+                </div>
               </div>
             </MDBCardText>
             <MDBCardText></MDBCardText>
           </MDBCardBody>
-        </MDBCard>
+        </div>
       </div>
     );
   }
